@@ -1,5 +1,4 @@
-class BlogController  {
-
+class BlogController {
     // GET /blog
     index(req, res) {
         res.render('blog');
@@ -9,7 +8,6 @@ class BlogController  {
     show(req, res) {
         res.send('Detail Blog');
     }
-
 }
 
 export default new BlogController();

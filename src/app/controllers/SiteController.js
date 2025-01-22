@@ -1,5 +1,4 @@
-class SiteController  {
-
+class SiteController {
     // GET /
     index(req, res) {
         res.render('home');
@@ -9,7 +8,6 @@ class SiteController  {
     search(req, res) {
         res.render('search');
     }
-
 }
 
 export default new SiteController();
