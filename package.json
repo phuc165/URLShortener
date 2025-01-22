@@ -2,6 +2,7 @@
   "name": "urlshortener",
   "version": "1.0.0",
   "main": "src/index.js",
+  "type": "module", 
   "scripts": {
     "start": "nodemon --inspect src/index.js",
     "watch": "sass --watch src/resource/scss:src/public/css",

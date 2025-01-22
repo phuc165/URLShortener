@@ -4,7 +4,15 @@ import morgan from 'morgan';
 const app = express()
 const port = 3000
 
+import route from './routes/index.js';
+
 app.use(express.static('src/public'));
+
+//middleware
+app.use(express.urlencoded(
+  { extended: true }
+));
+app.use(express.json());
 
 //HTTP request logger
 app.use(morgan('combined'))
@@ -16,9 +24,8 @@ app.engine('.hbs', engine({
 app.set('view engine', 'hbs');
 app.set('views', './src/resource/views');
 
-app.get('/', (req, res) => {
-  res.render('home');
-})
+//routes init
+route(app);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
