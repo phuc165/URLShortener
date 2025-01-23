@@ -6,6 +6,11 @@ const port = 3000;
 
 import route from './routes/index.js';
 
+//connect to db
+import connect from './config/db/index.js';
+connect();
+
+//static file
 app.use(express.static('src/public'));
 
 //middleware
@@ -31,5 +36,5 @@ route(app);
 //this is a test.....
 
 app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`);
+    console.log(`App listening on port ${port}`);
 });

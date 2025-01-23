@@ -5,6 +5,6 @@ import route from './index.js';
 const router = express.Router();
 
 router.get('/:slug', blogController.show);
-router.use('/', blogController.index);
+router.get('/', blogController.index);
 
 export default router;

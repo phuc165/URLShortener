@@ -4,7 +4,8 @@ import route from './index.js';
 
 const router = express.Router();
 
-router.get('/search', siteController.search);
-router.use('/', siteController.index);
+router.post('/result', siteController.result);
+router.get('/:shortUrlId', siteController.redirect);
+router.get('/', siteController.create);
 
 export default router;
