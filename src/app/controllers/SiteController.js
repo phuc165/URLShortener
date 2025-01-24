@@ -13,13 +13,19 @@ class SiteController {
     async result(req, res, next) {
         try {
             const longUrl = req.body.q;
-            const shortUrlId = sqids.encode([Date.now()]); // Pass timestamp as an array
-            const shortUrl = `${req.protocol}://${req.get('host')}/${shortUrlId}`;
 
-            const url = new Url({ long_url: longUrl, short_url: shortUrl });
-            await url.save();
+            // Check if the long URL already exists
+            let url = await Url.findOne({ long_url: longUrl });
 
-            res.send(`Short URL is: <a href="${shortUrl}">${shortUrl}</a>`);
+            if (!url) {
+                const shortUrlId = sqids.encode([Date.now()]); // Pass timestamp as an array
+                const shortUrl = `${req.protocol}://${req.get('host')}/${shortUrlId}`;
+
+                url = new Url({ long_url: longUrl, short_url: shortUrl });
+                await url.save();
+            }
+
+            res.render('result', { shortUrl: url.short_url });
         } catch (error) {
             next(error);
         }

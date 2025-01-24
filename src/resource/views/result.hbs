@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Short URL Result</title>
+</head>
+<body>
+    <h1>Your Short URL</h1>
+    <div>        
+        <p>Short URL is: <a href="{{shortUrl}}" id="shortUrl">{{shortUrl}}</a></p>
+        <button onclick="copyToClipboard()">Copy URL</button>
+        <p id="copyMessage" style="display: none;">Short URL copied to clipboard</p>
+    </div>
+    <a href="/">Shorten another link!</a>
+
+    <script>
+        function copyToClipboard() {
+            const shortUrl = document.getElementById('shortUrl').href;
+            navigator.clipboard.writeText(shortUrl).then(() => {
+                document.getElementById('copyMessage').style.display = 'block';
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-<form method="POST" style="margin-top: 20px;" action="/result">
+<form method="POST" style="margin-top: 20px;" action="/result" onsubmit="return validateForm()">
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label"></label>
     <input type="text" name="q" class="form-control" id="exampleInputEmail1" placeholder="paste your URL here">
@@ -6,3 +6,14 @@
   
   <button type="submit" class="btn btn-primary">Shorten it!</button>
 </form>
+
+<script>
+  function validateForm() {
+    const input = document.getElementById('exampleInputEmail1').value;
+    if (!input) {
+      alert('URL cannot be blank');
+      return false;
+    }
+    return true;
+  }
+</script>
