@@ -5,7 +5,6 @@
   "type": "module",
   "scripts": {
     "beautiful": "lint-staged",
-    "start": "npm src/index.js",
     "watch": "sass --watch src/resource/scss:src/public/css",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky"
