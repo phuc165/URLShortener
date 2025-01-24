@@ -1,4 +1,4 @@
-import Url from '../../models/url.js';
+import Url from '../models/url.js';
 import Sqids from 'sqids';
 
 const sqids = new Sqids();
