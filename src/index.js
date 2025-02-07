@@ -25,6 +25,8 @@ app.engine(
     '.hbs',
     engine({
         extname: '.hbs',
+        layoutsDir: 'src/resource/views/layouts',
+        defaultLayout: 'main',
     }),
 );
 app.set('view engine', 'hbs');
@@ -32,8 +34,6 @@ app.set('views', './src/resource/views');
 
 //routes init
 route(app);
-
-//this is a test.....
 
 app.listen(port, () => {
     console.log(`App listening on port ${port}`);

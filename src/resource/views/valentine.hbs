@@ -1,0 +1,101 @@
+<link rel="stylesheet" href="/css/valentine.css">
+
+<div class="container" id="parallax">
+  <div class="askingBox">
+    <p class="question">I can't imagine my life without you in it. Will you be
+      my Valentine?</p>
+    <div class="answerBox">
+      <div class="yesBox">
+        <div class="yesAns" id="myBtn">Yes</div>
+      </div>
+      <div class="yesBox" id="noBox">
+        <div id="noAns" onmousedown="placeDiv()">No</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <video class="firework" autoplay muted loop><source
+        src="/img/fireworkAnimation.webm" type="video/webm"></video>
+    <img src="/img/yatta.gif" alt class="yatta">
+    <video class="firework" autoplay muted loop><source
+        src="/img/fireworkAnimation.webm" type="video/webm"></video>
+  </div>
+
+</div>
+
+<script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on the button, open the modal
+    btn.onclick = function() {
+    modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+    modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+  let element = document.getElementById("noBox");
+  let position = element.getBoundingClientRect();
+
+  function getRandomInt(min, max) {
+    const minCeiled = Math.ceil(min);
+    const maxFloored = Math.floor(max);
+    return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled); // The maximum is exclusive and the minimum is inclusive
+  }
+
+  function placeDiv() {
+    x_pos = getRandomInt(position.left, position.right);
+    y_pos = getRandomInt(position.top, position.bottom);
+    var d = document.getElementById('noAns');
+    d.style.position = "absolute";
+    d.style.left = x_pos+'px';
+    d.style.top = y_pos+'px';
+  }
+    
+  (function() {
+            // Add event listener
+            document.addEventListener("mousemove", parallax);
+            const elem = document.querySelector("#parallax");
+            // Magic happens here
+            function parallax(e) {
+                let _w = window.innerWidth/2;
+                let _h = window.innerHeight/2;
+                let _mouseX = e.clientX;
+                let _mouseY = e.clientY;
+                let _depth1 = `${50 - (_mouseX - _w) * 0.005}% ${50 - (_mouseY - _h) * 0.005}%`; // Layer 1 (furthest back - less movement)
+                let _depth2 = `${50 - (_mouseX - _w) * 0.01}% ${50 - (_mouseY - _h) * 0.01}%`;  // Layer 2
+                let _depth3 = `${50 - (_mouseX - _w) * 0.02}% ${50 - (_mouseY - _h) * 0.02}%`;  // Layer 3
+                let _depth4 = `${50 - (_mouseX - _w) * 0.03}% ${50 - (_mouseY - _h) * 0.03}%`;  // Layer 4
+                let _depth5 = `${50 - (_mouseX - _w) * 0.04}% ${50 - (_mouseY - _h) * 0.04}%`;  // Layer 5
+                let _depth6 = `${50 - (_mouseX - _w) * 0.05}% ${50 - (_mouseY - _h) * 0.05}%`;  // Layer 6
+                let _depth7 = `${50 - (_mouseX - _w) * 0.06}% ${50 - (_mouseY - _h) * 0.06}%`;  // Layer 7
+                let _depth8 = `${50 - (_mouseX - _w) * 0.07}% ${50 - (_mouseY - _h) * 0.07}%`;
+                let _depth9 = `${50 - (_mouseX - _w) * 0.08}% ${50 - (_mouseY - _h) * 0.08}%`; // Layer 8 (closest - most movement)
+                let x = `${_depth9}, ${_depth8}, ${_depth7}, ${_depth6}, ${_depth5}, ${_depth4}, ${_depth3}, ${_depth2}, ${_depth1}`;
+                console.log(x);
+                elem.style.backgroundPosition = x;
+            }
+        
+  })();
+</script>
