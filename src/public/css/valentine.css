@@ -22,9 +22,15 @@ body {
 
 .askingBox {
   height: 40vh;
-  width: 120vh;
+  width: 180vh;
   margin-top: 20vh;
-  text-align: center;
+}
+
+.question {
+  width: fit-content;
+  padding: 20px;
+  background-color: white;
+  margin: auto;
 }
 
 .answerBox {
@@ -34,7 +40,7 @@ body {
   justify-content: space-between;
 }
 
-.noBox, .yesBox {
+.yesBox {
   width: 50%;
   height: 100%;
   display: flex;
@@ -42,17 +48,20 @@ body {
   align-items: center;
 }
 
-.yesAns, #noAns {
+.yesAns,
+#noAns {
   border-radius: 10px;
-  padding: 10px;
   background-color: white;
   width: 10%;
-  height: 5%;
+  height: 6%;
   margin: auto;
   position: absolute;
+  text-align: center;
+  align-content: center;
 }
 
-.yesAns:hover, #noAns:hover {
+.yesAns:hover,
+#noAns:hover {
   cursor: pointer;
 }
 
@@ -110,6 +119,24 @@ body {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+#rotationOverlay {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: white; /* Fallback color */
+  align-items: center;
+  margin-top: 10%;
+}
+#rotationOverlay p {
+  text-align: center;
+  font-size: x-large;
 }
 
 /*# sourceMappingURL=valentine.css.map */
