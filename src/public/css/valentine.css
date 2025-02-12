@@ -93,13 +93,15 @@ body {
 }
 
 @media only screen and (min-width: 1200px) {
-  .yesAns, #noAns {
+  .yesAns,
+  #noAns {
     width: 8%;
     height: 8%;
   }
 }
 @media only screen and (max-width: 1000px) {
-  .yesAns, #noAns {
+  .yesAns,
+  #noAns {
     width: 12%;
     height: 15%;
   }
@@ -184,7 +186,7 @@ body {
 
 /* Modal Content/Box */
 .modal-content {
-  background-image: url("/img/modalBG.jpg");
+  background-image: url("/img/modalBG.webm");
   background-size: cover;
   background-repeat: no-repeat;
   /* Prevent image tiling */
