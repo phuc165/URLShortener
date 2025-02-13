@@ -186,7 +186,7 @@ body {
 
 /* Modal Content/Box */
 .modal-content {
-  background-image: url("/img/modalBG.webm");
+  background-image: url("/img/modalBG.webp");
   background-size: cover;
   background-repeat: no-repeat;
   /* Prevent image tiling */
