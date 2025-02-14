@@ -16,6 +16,7 @@ body {
     display: flex;
     /* Ensure it is behind other content */
     div {
+        will-change: transform;
         img {
             width: 100vw;
             height: 100vh;

@@ -13,6 +13,7 @@ body {
   /* Ensure it is behind other content */
 }
 #scene div {
+  will-change: transform;
   align-items: center;
 }
 #scene div img {
