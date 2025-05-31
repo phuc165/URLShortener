@@ -184,36 +184,43 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  width: 10vw;
 }
 .modal-content .gif2 {
   position: absolute;
   top: 0;
   right: 0;
+  width: 10vw;
 }
 .modal-content .gif3 {
   position: absolute;
   bottom: 0;
   left: center;
+  width: 10vw;
 }
 .modal-content .gif4 {
   position: absolute;
   bottom: 0;
   left: 0;
+  width: 10vw;
 }
 .modal-content .gif5 {
   position: absolute;
   bottom: 0;
   right: 0;
+  width: 10vw;
 }
 .modal-content .firework1 {
   position: absolute;
   left: 0;
   top: 30%;
+  width: 15vw;
 }
 .modal-content .firework2 {
   position: absolute;
   right: 0;
   top: 40%;
+  width: 15vw;
 }
 
 .close {
